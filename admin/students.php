@@ -34,6 +34,7 @@ VALUES('$uid','$class','$roll')");
         <a href="fees.php">Fees</a>
         <a href="subjects.php">Subjects</a>
         <a href="exams.php">Exams</a>
+        <a href="users.php">Users</a>
         <a href="../auth/logout.php">Logout</a>
     </div>
     <div class="main">
