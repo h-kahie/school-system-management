@@ -29,6 +29,11 @@ VALUES('$uid','$class','$roll')");
         <h2>Admin</h2>
         <a href="dashboard.php">Dashboard</a>
         <a href="students.php">Students</a>
+        <a href="teachers.php">Teachers</a>
+        <a href="classes.php">Classes</a>
+        <a href="fees.php">Fees</a>
+        <a href="subjects.php">Subjects</a>
+        <a href="exams.php">Exams</a>
         <a href="../auth/logout.php">Logout</a>
     </div>
     <div class="main">
