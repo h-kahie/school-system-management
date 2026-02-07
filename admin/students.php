@@ -18,10 +18,30 @@ mysqli_query($conn,"INSERT INTO students(user_id,class_id,roll_no)
 VALUES('$uid','$class','$roll')");
 }
 ?>
-<form method="post" class="form-box">
-<input name="name" placeholder="Name">
-<input name="email" placeholder="Email">
-<input name="roll" placeholder="Roll">
-<input name="class" placeholder="Class ID">
-<button name="add">Add Student</button>
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<div class="wrapper">
+    <div class="sidebar">
+        <h2>Admin</h2>
+        <a href="dashboard.php">Dashboard</a>
+        <a href="students.php">Students</a>
+        <a href="../auth/logout.php">Logout</a>
+    </div>
+    <div class="main">
+        <div class="topbar"><h3>Add Student</h3></div>
+        <!-- Added consistent admin layout and styling for the add student form. -->
+        <form method="post" class="form-box">
+            <input name="name" placeholder="Name" required>
+            <input name="email" placeholder="Email" type="email" required>
+            <input name="roll" placeholder="Roll" required>
+            <input name="class" placeholder="Class ID" required>
+            <button name="add">Add Student</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
