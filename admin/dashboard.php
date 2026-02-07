@@ -8,7 +8,7 @@ $total_teachers = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM teachers"))
 $total_classes  = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM classes"));
 $total_fees  = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM fees"));
 $total_subject  = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM subjects"));
-$total_exam  = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM exam"));
+$total_exams  = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM exams"));
 $total_users = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users"));
 
 
@@ -62,6 +62,10 @@ $total_users = mysqli_num_rows(mysqli_query($conn, "SELECT * FROM users"));
             <div class="card">
                 <h1><?php echo $total_subject; ?></h1>
                 <p>Total Subject</p>
+            </div>
+            <div class="card">
+                <h1><?php echo $total_exams; ?></h1>
+                <p>Total Exams</p>
             </div>
             <div class="card">
                 <h1><?php echo $total_users; ?></h1>
