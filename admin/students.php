@@ -33,6 +33,7 @@ VALUES('$uid','$class','$roll')");
     </div>
     <div class="main">
         <div class="topbar"><h3>Add Student</h3></div>
+        <!-- Added consistent admin layout and styling for the add student form. -->
         <form method="post" class="form-box">
             <input name="name" placeholder="Name" required>
             <input name="email" placeholder="Email" type="email" required>
