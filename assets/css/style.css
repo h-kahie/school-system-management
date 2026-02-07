@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background: lightgray;
+    margin: 0;
+}
+
+.form-box {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.wrapper {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 220px;
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    font-size: 18px;
+    border-bottom: 1px solid steelblue;
+    padding-bottom: 10px;
+}
+
+.sidebar a {
+    color: white;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: steelblue;
+}
+
+.main {
+    flex: 1;
+    padding: 20px;
+}
+
+.topbar {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 4px;
+}
+
+input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box; /* Si uu padding-ku ugu dhex jiro width-ka */
+}
+
+button {
+    background: steelblue;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #357ca5;
+}
+
+.card-container {
+    display: flex; 
+    gap: 20px;   
+    flex-wrap: wrap; 
+}
+
+.card {
+    background: white;
+    width: 250px;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    border-top: 5px solid steelblue;
+}
+
+.card h1 {
+    margin: 0;
+    font-size: 40px;
+    color: #333;
+}
+
+.card p {
+    margin: 10px 0 0 0;
+    color: #666;
+    font-weight: bold;
+    text-transform: uppercase;
+}
