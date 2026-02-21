@@ -29,22 +29,22 @@ WHERE students.user_id='$uid'
     <div class="main">
         <div class="topbar"><h3>Results</h3></div>
         <!-- Added student layout styling and structured results list. -->
-        <div class="list-box list-box-tight-top">
+        <div class="form-box">
             <?php if(mysqli_num_rows($result) === 0){ ?>
                 <p>No results available yet.</p>
             <?php } else { ?>
-                <table class="data-table">
+                <table style="width:100%; border-collapse:collapse;">
                     <thead>
                         <tr>
-                            <th>Subject</th>
-                            <th>Marks</th>
+                            <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Subject</th>
+                            <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Marks</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php while($r=mysqli_fetch_assoc($result)){ ?>
                             <tr>
-                                <td><?php echo $r['subject_name']; ?></td>
-                                <td><?php echo $r['marks']; ?></td>
+                                <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $r['subject_name']; ?></td>
+                                <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $r['marks']; ?></td>
                             </tr>
                         <?php } ?>
                     </tbody>
@@ -55,3 +55,4 @@ WHERE students.user_id='$uid'
 </div>
 </body>
 </html>
+?>

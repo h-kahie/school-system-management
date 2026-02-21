@@ -10,6 +10,7 @@ if(isset($_POST['add'])){
     mysqli_query($conn,"INSERT INTO subjects(subject_name,class_id,teacher_id) VALUES('$name','$class','$teacher')");
 }
 
+$subjects = mysqli_query($conn,"SELECT * FROM subjects ORDER BY id DESC");
 ?>
 <!DOCTYPE html>
 <html>
@@ -32,12 +33,48 @@ if(isset($_POST['add'])){
     </div>
     <div class="main">
         <div class="topbar"><h3>Subjects</h3></div>
+        <!-- Added subjects management form and list for admin. -->
         <form method="post" class="form-box">
             <input name="subject_name" placeholder="Subject Name" required>
             <input name="class_id" placeholder="Class ID" required>
             <input name="teacher_id" placeholder="Teacher ID" required>
             <button name="add">Add Subject</button>
         </form>
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Subject</th>
+                        <th>Class</th>
+                        <th>Teacher</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Subject</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Class</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Teacher</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($row=mysqli_fetch_assoc($subjects)){ ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['subject_name']; ?></td>
+                            <td><?php echo $row['class_id']; ?></td>
+                            <td><?php echo $row['teacher_id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['subject_name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['class_id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['teacher_id']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>

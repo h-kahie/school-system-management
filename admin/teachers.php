@@ -15,6 +15,7 @@ if(isset($_POST['add'])){
     mysqli_query($conn,"INSERT INTO teachers(user_id,qualification) VALUES('$uid','$qualification')");
 }
 
+$teachers = mysqli_query($conn,"SELECT teachers.id, users.name, users.email, teachers.qualification FROM teachers JOIN users ON users.id=teachers.user_id ORDER BY teachers.id DESC");
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,12 +38,48 @@ if(isset($_POST['add'])){
     </div>
     <div class="main">
         <div class="topbar"><h3>Teachers</h3></div>
+        <!-- Added teachers management form and list for admin. -->
         <form method="post" class="form-box">
             <input name="name" placeholder="Name" required>
             <input name="email" placeholder="Email" type="email" required>
             <input name="qualification" placeholder="Qualification" required>
             <button name="add">Add Teacher</button>
         </form>
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Qualification</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Name</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Email</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Qualification</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($row=mysqli_fetch_assoc($teachers)){ ?>
+                        <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['qualification']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['email']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['qualification']; ?></td>
+                        </tr>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 </body>

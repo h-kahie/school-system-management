@@ -114,18 +114,14 @@ select {
     box-sizing: border-box;
 }
 
-.list-box {
+.table-box {
     background: white;
-    width: min(980px, 100%);
+    width: min(900px, 100%);
     margin: 20px auto;
-    padding: 16px 22px;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     overflow-x: auto;
-}
-
-.list-box-tight-top {
-    margin-top: 8px;
 }
 
 .data-table {
