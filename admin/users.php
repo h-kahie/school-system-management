@@ -26,9 +26,9 @@ $users = mysqli_query($conn,"SELECT id,name,email,role FROM users ORDER BY id DE
     </div>
     <div class="main">
         <div class="topbar"><h3>Users</h3></div>
-
-        <!-- Single users table (duplicate render removed) and moved slightly upward. -->
-        <div class="list-box list-box-tight-top">
+        <!-- Added admin users list view for quick access. -->
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
             <table class="data-table">
                 <thead>
                     <tr>
@@ -36,6 +36,14 @@ $users = mysqli_query($conn,"SELECT id,name,email,role FROM users ORDER BY id DE
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Name</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Email</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Role</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +53,10 @@ $users = mysqli_query($conn,"SELECT id,name,email,role FROM users ORDER BY id DE
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['role']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['email']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['role']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
