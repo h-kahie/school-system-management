@@ -4,19 +4,17 @@ include("../config/db.php");
 if($_SESSION['role']!="admin") exit("Denied");
 
 if(isset($_POST['add'])){
-$name=$_POST['name'];
-$email=$_POST['email'];
-$roll=$_POST['roll'];
-$class=$_POST['class'];
-$pass=password_hash("12345",PASSWORD_DEFAULT);
+    $name=$_POST['name'];
+    $email=$_POST['email'];
+    $qualification=$_POST['qualification'];
+    $pass=password_hash("12345",PASSWORD_DEFAULT);
 
-mysqli_query($conn,"INSERT INTO users(name,email,password,role)
-VALUES('$name','$email','$pass','student')");
-$uid=mysqli_insert_id($conn);
+    mysqli_query($conn,"INSERT INTO users(name,email,password,role) VALUES('$name','$email','$pass','teacher')");
+    $uid=mysqli_insert_id($conn);
 
-mysqli_query($conn,"INSERT INTO students(user_id,class_id,roll_no)
-VALUES('$uid','$class','$roll')");
+    mysqli_query($conn,"INSERT INTO teachers(user_id,qualification) VALUES('$uid','$qualification')");
 }
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,14 +36,12 @@ VALUES('$uid','$class','$roll')");
         <a href="../auth/logout.php">Logout</a>
     </div>
     <div class="main">
-        <div class="topbar"><h3>Add Student</h3></div>
-        <!-- Added consistent admin layout and styling for the add student form. -->
+        <div class="topbar"><h3>Teachers</h3></div>
         <form method="post" class="form-box">
             <input name="name" placeholder="Name" required>
             <input name="email" placeholder="Email" type="email" required>
-            <input name="roll" placeholder="Roll" required>
-            <input name="class" placeholder="Class ID" required>
-            <button name="add">Add Student</button>
+            <input name="qualification" placeholder="Qualification" required>
+            <button name="add">Add Teacher</button>
         </form>
     </div>
 </div>
