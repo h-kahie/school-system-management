@@ -40,6 +40,15 @@ $subjects = mysqli_query($conn,"SELECT * FROM subjects ORDER BY id DESC");
             <input name="teacher_id" placeholder="Teacher ID" required>
             <button name="add">Add Subject</button>
         </form>
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Subject</th>
+                        <th>Class</th>
+                        <th>Teacher</th>
         <div class="form-box">
             <table style="width:100%; border-collapse:collapse;">
                 <thead>
@@ -53,6 +62,10 @@ $subjects = mysqli_query($conn,"SELECT * FROM subjects ORDER BY id DESC");
                 <tbody>
                     <?php while($row=mysqli_fetch_assoc($subjects)){ ?>
                         <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['subject_name']; ?></td>
+                            <td><?php echo $row['class_id']; ?></td>
+                            <td><?php echo $row['teacher_id']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['subject_name']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['class_id']; ?></td>

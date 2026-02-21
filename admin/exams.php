@@ -40,6 +40,15 @@ $exams = mysqli_query($conn,"SELECT * FROM exams ORDER BY id DESC");
             <input name="exam_date" type="date" required>
             <button name="add">Add Exam</button>
         </form>
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Exam</th>
+                        <th>Class</th>
+                        <th>Date</th>
         <div class="form-box">
             <table style="width:100%; border-collapse:collapse;">
                 <thead>
@@ -53,6 +62,10 @@ $exams = mysqli_query($conn,"SELECT * FROM exams ORDER BY id DESC");
                 <tbody>
                     <?php while($row=mysqli_fetch_assoc($exams)){ ?>
                         <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['exam_name']; ?></td>
+                            <td><?php echo $row['class_id']; ?></td>
+                            <td><?php echo $row['exam_date']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['exam_name']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['class_id']; ?></td>

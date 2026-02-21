@@ -27,6 +27,15 @@ $users = mysqli_query($conn,"SELECT id,name,email,role FROM users ORDER BY id DE
     <div class="main">
         <div class="topbar"><h3>Users</h3></div>
         <!-- Added admin users list view for quick access. -->
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
         <div class="form-box">
             <table style="width:100%; border-collapse:collapse;">
                 <thead>
@@ -40,6 +49,10 @@ $users = mysqli_query($conn,"SELECT id,name,email,role FROM users ORDER BY id DE
                 <tbody>
                     <?php while($row=mysqli_fetch_assoc($users)){ ?>
                         <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['role']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['name']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['email']; ?></td>

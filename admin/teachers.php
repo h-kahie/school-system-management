@@ -45,6 +45,15 @@ $teachers = mysqli_query($conn,"SELECT teachers.id, users.name, users.email, tea
             <input name="qualification" placeholder="Qualification" required>
             <button name="add">Add Teacher</button>
         </form>
+        <!-- Removed the cramped boxed table style and replaced with wide responsive table container. -->
+        <div class="table-box">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Qualification</th>
         <div class="form-box">
             <table style="width:100%; border-collapse:collapse;">
                 <thead>
@@ -58,6 +67,10 @@ $teachers = mysqli_query($conn,"SELECT teachers.id, users.name, users.email, tea
                 <tbody>
                     <?php while($row=mysqli_fetch_assoc($teachers)){ ?>
                         <tr>
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['name']; ?></td>
+                            <td><?php echo $row['email']; ?></td>
+                            <td><?php echo $row['qualification']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['name']; ?></td>
                             <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['email']; ?></td>
