@@ -106,3 +106,36 @@ button:hover {
     font-weight: bold;
     text-transform: uppercase;
 }
+
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.list-box {
+    background: white;
+    width: min(980px, 100%);
+    margin: 20px auto;
+    padding: 16px 22px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    overflow-x: auto;
+}
+
+.list-box-tight-top {
+    margin-top: 8px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
