@@ -113,3 +113,25 @@ select {
     margin-bottom: 10px;
     box-sizing: border-box;
 }
+
+.table-box {
+    background: white;
+    width: min(900px, 100%);
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th,
+.data-table td {
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
