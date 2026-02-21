@@ -43,6 +43,12 @@ $classes = mysqli_query($conn,"SELECT * FROM classes ORDER BY id DESC");
                     <tr>
                         <th>ID</th>
                         <th>Class Name</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Class Name</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,6 +56,8 @@ $classes = mysqli_query($conn,"SELECT * FROM classes ORDER BY id DESC");
                         <tr>
                             <td><?php echo $row['id']; ?></td>
                             <td><?php echo $row['class_name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['class_name']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

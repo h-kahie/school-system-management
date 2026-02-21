@@ -49,6 +49,14 @@ $exams = mysqli_query($conn,"SELECT * FROM exams ORDER BY id DESC");
                         <th>Exam</th>
                         <th>Class</th>
                         <th>Date</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Exam</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Class</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Date</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,6 +66,10 @@ $exams = mysqli_query($conn,"SELECT * FROM exams ORDER BY id DESC");
                             <td><?php echo $row['exam_name']; ?></td>
                             <td><?php echo $row['class_id']; ?></td>
                             <td><?php echo $row['exam_date']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['exam_name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['class_id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['exam_date']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

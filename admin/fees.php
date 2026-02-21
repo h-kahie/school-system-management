@@ -38,6 +38,7 @@ $fees = mysqli_query($conn,"SELECT * FROM fees ORDER BY id DESC");
             <input name="student_id" placeholder="Student ID" required>
             <input name="amount" placeholder="Amount" type="number" min="0" required>
             <select name="status" required>
+            <select name="status" required style="width:100%; padding:10px; margin-bottom:10px;">
                 <option value="">Select Status</option>
                 <option value="paid">Paid</option>
                 <option value="unpaid">Unpaid</option>
@@ -53,6 +54,14 @@ $fees = mysqli_query($conn,"SELECT * FROM fees ORDER BY id DESC");
                         <th>Student</th>
                         <th>Amount</th>
                         <th>Status</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Student</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Amount</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Status</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -62,6 +71,10 @@ $fees = mysqli_query($conn,"SELECT * FROM fees ORDER BY id DESC");
                             <td><?php echo $row['student_id']; ?></td>
                             <td><?php echo $row['amount']; ?></td>
                             <td><?php echo $row['status']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['student_id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['amount']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['status']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>

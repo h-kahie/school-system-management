@@ -54,6 +54,14 @@ $teachers = mysqli_query($conn,"SELECT teachers.id, users.name, users.email, tea
                         <th>Name</th>
                         <th>Email</th>
                         <th>Qualification</th>
+        <div class="form-box">
+            <table style="width:100%; border-collapse:collapse;">
+                <thead>
+                    <tr>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">ID</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Name</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Email</th>
+                        <th style="text-align:left; padding:8px; border-bottom:1px solid #ddd;">Qualification</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -63,6 +71,10 @@ $teachers = mysqli_query($conn,"SELECT teachers.id, users.name, users.email, tea
                             <td><?php echo $row['name']; ?></td>
                             <td><?php echo $row['email']; ?></td>
                             <td><?php echo $row['qualification']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['id']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['name']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['email']; ?></td>
+                            <td style="padding:8px; border-bottom:1px solid #f0f0f0;"><?php echo $row['qualification']; ?></td>
                         </tr>
                     <?php } ?>
                 </tbody>
